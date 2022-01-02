@@ -46,7 +46,7 @@ function Sidebar() {
   return (
     <Container>
       <Header>
-        <UserAvatar onClick={()=>auth.signOut()}/>
+        <UserAvatar src={user.photoURL} onClick={()=>auth.signOut()}/>
         <IconsContainer>
           <IconButton>
             <ChatIcon/>
@@ -68,7 +68,7 @@ function Sidebar() {
       
       {/* list of Chat */}
       {chatsSnapshot?.docs.map((chat)=>{    
-       return <Chat key={chat.id} id={chat.id} user={chat.data().users} />
+       return <Chat key={chat.id} id={chat.id} users={chat.data().users} />
 
       })}
 
